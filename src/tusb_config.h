@@ -93,7 +93,10 @@
 #endif
 
 //------------- CLASS -------------//
-#define CFG_TUD_DFU               1
+#define CFG_TUD_DFU               0
+#define CFG_TUD_CDC               1
+#define BOARD_TUH_RHPORT          1
+
 
 // CDC FIFO size of TX and RX
 #define CFG_TUD_CDC_RX_BUFSIZE   (TUD_OPT_HIGH_SPEED ? 512 : 64)

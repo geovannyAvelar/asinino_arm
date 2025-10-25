@@ -1,5 +1,6 @@
 TOP ?= $(TINYUSB_ROOT)
 BOARD ?= uno_r4
+PROJECT_NAME ?= asinino
 
 # run 
 # python tools/get_deps.py ra
@@ -28,10 +29,14 @@ SRC_C += $(FSP_SOURCE)
 
 CFLAGS += -Os -flto
 CFLAGS += -ffunction-sections -fdata-sections
-LDFLAGS += -Wl,--gc-sections -flto
-
+CFLAGS += -Wno-null-dereference -Wno-unused-const-variable -Wno-unused-function -Wno-unused-parameter
 CFLAGS += --warn-no-undef
+LDFLAGS += -Wl,--gc-sections -flto
 
 include $(TOP)/examples/build_system/make/rules.mk
 
 LD_FILE = $(FAMILY_PATH)/linker/gcc/$(MCU_VARIANT).ld
+
+.PHONY: clean
+
+build: all

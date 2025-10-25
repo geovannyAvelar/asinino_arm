@@ -1,2 +1,11 @@
 _build/
 build/
+.idea
+*.hex
+*.bin
+*.elf
+*.map
+*.o
+*.d
+*.a
+*.log
