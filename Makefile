@@ -12,6 +12,8 @@ INC += \
 	src \
 	$(TOP)/hw \
 
+
+EXAMPLE_SOURCE += $(wildcard src/hal/*.c)
 EXAMPLE_SOURCE += $(wildcard src/*.c)
 FSP_SOURCE += $(TOP)/hw/mcu/renesas/fsp/ra/fsp/src/r_flash_lp/r_flash_lp.c
 CFLAGS += -DFLASH_LP_CFG_CODE_FLASH_PROGRAMMING_ENABLE -DFLASH_LP_CFG_DATA_FLASH_PROGRAMMING_ENABLE
